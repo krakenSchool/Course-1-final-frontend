@@ -4,7 +4,6 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Buffer } from "buffer";
-require("dotenv").config();
 window.Buffer = Buffer;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
