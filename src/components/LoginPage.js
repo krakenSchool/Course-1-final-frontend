@@ -24,7 +24,7 @@ export const LoginPage = ({ onLogin }) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/login",
+        `${process.env.SERVER_ENDPOINT}/login`,
         formData,
         { headers: { "Content-Type": "application/json" } }
       );

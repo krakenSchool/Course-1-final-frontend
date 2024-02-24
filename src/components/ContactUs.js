@@ -21,7 +21,7 @@ export const ContactForm = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/contact",
+        `${process.env.SERVER_ENDPOINT}/contact`,
         formData,
         {
           headers: {

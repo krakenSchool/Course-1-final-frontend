@@ -8,7 +8,7 @@ export const TicketPanel = () => {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/tickets");
+        const res = await axios.get(`${process.env.SERVER_ENDPOINT}/tickets`);
         setTickets(res.data);
       } catch (error) {
         console.log("An error occured loading tickets", error);
@@ -25,7 +25,7 @@ export const TicketPanel = () => {
         console.log("Token not found");
         return;
       }
-      await axios.delete(`http://localhost:3000/tickets/${ticketId}`, {
+      await axios.delete(`${process.env.SERVER_ENDPOINT}/tickets/${ticketId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
